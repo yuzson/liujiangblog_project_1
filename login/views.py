@@ -112,7 +112,7 @@ def register(request):
                     message = '该邮箱地址已经被注册，请使用别的邮箱！'
                     return render(request, 'login/register.html', locals())
 
-            new_user = models.User.objects.create()
+            new_user = models.User()
             new_user.name = username
             new_user.password = hash_code(password2)
             new_user.email = email
